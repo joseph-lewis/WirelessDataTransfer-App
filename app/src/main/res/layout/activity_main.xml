@@ -23,6 +23,15 @@
         android:text="Please select whether you want to SEND or RECEIVE on this device"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="182dp" />
+    <TextView
+        android:id="@+id/idTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="182dp" />
 
     <Button
         android:id="@+id/btnSend"
