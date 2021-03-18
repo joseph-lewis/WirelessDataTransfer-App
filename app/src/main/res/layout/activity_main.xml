@@ -48,5 +48,13 @@
         android:text="RECEIVE"
         tools:layout_editor_absoluteX="248dp"
         tools:layout_editor_absoluteY="304dp" />
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONNECT"
+        tools:layout_editor_absoluteX="248dp"
+        tools:layout_editor_absoluteY="304dp" />
 </LinearLayout>
 </RelativeLayout>

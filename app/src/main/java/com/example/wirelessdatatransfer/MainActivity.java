@@ -26,6 +26,7 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
     SharedPreferences UniqueID;
     private Button btnSend;
+    private Button btnConnect
     private TextView idTxt;
     private static Context context;
 //    private String HOST = "3.16.23.208";
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnSend = (Button) findViewById(R.id.btnSend);
+        btnConnect = (Button) findViewById(R.id.btnConnect);
         idTxt = (TextView) findViewById(R.id.idTxt);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -66,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnConnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openConnectPG();
+            }
+        });
+
+    }
+
+    private void openConnectPG() {
+        Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
+        startActivity(intent);
     }
 
 
@@ -91,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDevicetoServer(String UniqueID) throws IOException {
-        String output = String.format("!add " + UniqueID);
+        String userName = "Joe";
+        String output = String.format("%s,%s\n", userName, UniqueID);
         Socket socket = new Socket(HOST, 3000);
         OutputStream outputStream = socket.getOutputStream();
         DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
